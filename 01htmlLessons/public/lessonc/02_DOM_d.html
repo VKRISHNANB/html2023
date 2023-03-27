@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Learning</title>
+	
+	<style>
+		   .green{
+			background-color:green
+		   }
+			li.yellow {
+				background-color: yellow;
+			}
+	</style>
+</head>
+
+<body>
+    <div id="div01" class='green'>Hello World!</div>
+    <h1>My Title</h1>
+    <p>parara tag</p>
+    <ul>
+        <li class="green">list1</li>
+        <li>list2</li>
+        <li class="yellow">list3</li>
+        <li>list4</li>
+    </ul>
+    <p><img alt="dom model" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg"></p>
+	
+	<p> <input title="enter your name" type="text" id="txtName" value="Movies"/> </p>
+    <script>
+	//selecting element by class
+		var listItems = document.getElementsByClassName('green') 
+		//returns all element with class green
+		//looping through the item and updating the text
+		for(var i=0;i<listItems.length;i++)
+		{
+			listItems[i].innerHTML = "green color text updated"
+		}
+		// Query Selector
+		// returns the first element (only one element)
+		console.dir(document.querySelector('li')); 
+		//returns all li element (cssname, elementname, etc..)
+		console.dir(document.querySelectorAll('li')); 
+		//found the first element
+		console.dir(document.querySelector('ul > li')); 
+		console.dir(document.querySelector('div')); //element
+		console.dir(document.querySelector('#div01')); //id
+		console.dir(document.querySelector('.green')); //class
+		console.dir(document.querySelectorAll('div')); //all div
+		// change style of the element
+		var divOne=document.getElementById("div01");
+		divOne.style.color = 'white' ;
+    </script>
+</body>
+
+</html>

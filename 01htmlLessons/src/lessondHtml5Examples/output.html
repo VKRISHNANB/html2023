@@ -1,0 +1,63 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title of the document</title>
+	<style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0px;
+    }
+    .container {
+        height: 100%;
+        background: #f0e68c;
+    }
+	#inputDiv
+	{
+		background-color: Grey; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+	}
+	#outputDiv
+	{
+		background-color:Orange; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="inputDiv">
+		<xmp>
+<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+<input type="range" id="a" value="50">100
++<input type="number" id="b" value="50">
+=<output name="x" for="a b"></output>
+</form>
+
+<p><strong>Note:</strong> The output element is not supported in Edge 12 or Internet Explorer and earlier versions.</p>
+		</xmp>
+	</div>
+
+	<div id="outputDiv">
+		<div>
+			<form oninput="x.value=parseInt(a.value)+parseInt(b.value)">0
+			<input type="range" id="a" value="50">100
+			+<input type="number" id="b" value="50">
+			=<output name="x" for="a b"></output>
+			</form>
+
+<p><strong>Note:</strong> The output element is not supported in Edge 12 or Internet Explorer and earlier versions.</p>
+		</div>
+	</div>
+	<div style="clear: both;">
+		<a href="index.html">Home</a>
+	</div>
+</body>
+</html>

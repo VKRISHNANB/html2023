@@ -1,0 +1,15 @@
+/* units css */
+
+body, div{
+    font-size:20px;
+}
+h1,p{
+    font-size:50px;
+    /* font-size:5em; */
+    /* font-size: 3rem; */
+    font-size:200%
+}
+
+div{
+    font-size:15px;
+}

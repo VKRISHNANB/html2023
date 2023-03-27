@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Input Types</title>
+
+	<style>
+		div {
+			margin: 15px;
+		}
+	</style>
+</head>
+
+<body>
+	<header>
+		<h1> Input Types </h1>
+	</header>
+	<div>
+		<form>
+			<div>
+				<label for="year"> Years of Experience</label>
+				<input title="experience" id="year" name="year" type="number" min=1 max=40 	step=1 maxlength="3" />
+			</div>
+			<div>
+				<label for="range"> Range</label>
+				<input id="range" type="range" min=1 max=100 step=10 />
+			</div>
+			<div>
+				<label for="search"> Skills</label>
+				<input id="search" type="search"
+					placeholder="Search your skill" />
+			</div>
+			<div>
+				<label for="telid">Telephone</label>
+				<input type="tel" id="telid" name="telid" required
+					pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}"
+					placeholder="123-456-678" />
+			</div>
+			<!-- <div>
+		  <label>Gender</label>
+		  <ul>
+		  <input type="radio" checked=true name="Male" value="male">  Male </input>
+		   <input type="radio"  name="female" value="female">  Female </input>
+		</ul>
+        </div> -->
+			<div>
+				<label for="hobbies"> Hobbies</label>
+				<input title="hobbies" type="checkbox" checked=true id="hobbies1" name="hobbies1" value="Reading">Reading</input>
+				<input title="hobbies" type="checkbox" name="hobbies2" id="hobbies2" value="Music">Music</input>
+				<input title="hobbies" type="checkbox" name="hobbies3" id="hobbies3" value="Dance">Dance</input>
+			</div>
+
+			<div>
+				<label> hidden content</label>
+				<input id="hid" type="hidden" value="Test Message" />
+			</div>
+			<div>
+				<label> Url</label>
+				<input id="url" type="url" placeholder="https://www.examples.com" pattern="https://.*" />
+			</div>
+
+			<div>
+				<label> select course</label>
+				<select name="course list" title="Select a course">
+					<option selected> ---Select a Value---</option>
+					<option> Html</option>
+					<option> Java</option>
+					<option> Bootstrap</option>
+					<optgroup label="database">
+						<option> SQL</option>
+						<option> Oracle</option>
+						<option> MySQL</option>
+					</optgroup>
+				</select>
+			</div>
+			<!-- <div>
+			<progress  max=100>
+				<h4>30%</h4>
+			</progress>
+		</div> -->
+			<div>
+				<label for="comment"> Comments</label>
+				<textarea id="comment" cols="50" rows="5"> comments</textarea>
+			</div>
+			<div>
+				<input type="submit" />
+				<input type="reset" value="reset" />
+				<input type="image" alt="close" name="Close" width="25"
+					height="25" src="../images/close.jpg" />
+			</div>
+		</form>
+	</div>
+</body>
+</html>

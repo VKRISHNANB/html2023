@@ -1,0 +1,28 @@
+1. Introduction to the DOM Events Course
+2. High-Level DOM Events Concepts
+3. Listen to Events using HTML Attribute Event Handlers
+4. Listen to Events using Object Property Event Handlers
+5. Understand the Relationship Between HTML Attribute and Object Property Event Handlers
+6. Add an Event Listener with addEventListener
+7. Remove an Event Listener with removeEventListener
+8. Choose an Event Listener Mechanism
+9. The Execution Order of Event Listeners
+10. The Execution Order of Event Listeners in the Target Phase
+11. The Event Object
+12. Log Events to the Console
+13. Cancel Events
+14. Cancel Bespoke Events
+15. Stop Events
+16. The Event Delegation Pattern
+17. Create and Dispatch Synthetic Events
+18. Deprecated Event Creation Mechanisms
+19. Events are Dispatched Synchronously
+20. Add and Remove Event Listeners while an Event is Dispatching
+21. DOM Events and the Event Loop
+22. DOM Events and Microtasks
+23. Improve Scroll Performance with Passive Event Listeners
+24. Default Passive Values on the Body Element
+25. Synchronous and Asynchronous Events (Ordered and Unordered Events)
+26. Window Reflecting Body Element Event Handlers
+27. Debug and Inspect Event Listeners with Chrome Developer Tools
+28. Debug Event Listener Performance with Chrome Developer Tools

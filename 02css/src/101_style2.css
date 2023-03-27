@@ -1,0 +1,32 @@
+/* Descentant by space */
+section p
+{
+    color:red;
+}
+
+section > p
+{
+    color:orange;
+}
+
+/* Adjacent sibling + select all immediate element */
+/*Selects immediately following sibling of specified element */
+h1 + p
+{
+    color:yellow;
+    background-color: blue;
+}
+
+/* selects all siblings placed after specified element */
+
+h1 ~ p
+{
+    background-color: rgb(49, 5, 46);
+}
+/*
+h1 > p
+{
+    background-color: antiquewhite;
+} */
+
+

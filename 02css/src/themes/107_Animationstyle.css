@@ -1,0 +1,85 @@
+/* Animation */
+/* for class based style */
+.box {
+    width: 200px;
+    height: 200px;
+    background-color:olivedrab;
+    position:relative;
+    animation-name:anim2; /* this is defined below @keyffram anim*/
+    animation-duration:4s;   /*set animation duration in seconds */
+}
+<<<<<<< HEAD:02css/src/themes/107_Animationstyle.css
+
+/* Keyframes are the important frames which contain information of a start/end point of an action. 
+A keyframe tells you about two things; first, it tells you what the action of your frame is at a certain point of time;
+ second, it tells you what time that action occurs. */
+
+
+
+ @keyframes anim {
+
+=======
+/* Keyframes are the important frames which contain information of a 
+                                                    start/end point of an action. 
+A keyframe tells you about two things :
+    first, it tells you what the action of your frame is at a certain point of time; 
+    second, it tells you what time that action occurs. 
+*/
+@keyframes anim {
+>>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1:02css/src/107_Animationstyle.css
+    0%{
+        left:0;
+        top:0;
+        background-color:aqua;
+    }
+    100%{
+        left:500px;
+        top:0;
+        background-color:green;
+    }
+}
+
+
+/* change % from to (5,25,50,75) for the animation color and postion */
+
+<<<<<<< HEAD:02css/src/themes/107_Animationstyle.css
+ 
+
+/* @keyframes anim {
+=======
+
+>>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1:02css/src/107_Animationstyle.css
+
+@keyframes anim2 {
+    0%{
+        left:0;
+        top:0;
+        background-color:aqua;
+    }
+    25%{
+        left:500px;
+        top:0;
+        background-color:green;
+    }
+    50%{
+        left:500px;
+        top:500px;
+        background-color:greenyellow;
+    }
+    75%{
+        left:0px;
+        top:500px;
+        background-color:blue;
+    }
+    100%{
+        left:0;
+        top:0;
+        background-color:aqua;
+    }
+<<<<<<< HEAD:02css/src/themes/107_Animationstyle.css
+}  */
+=======
+} 
+>>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1:02css/src/107_Animationstyle.css
+
+

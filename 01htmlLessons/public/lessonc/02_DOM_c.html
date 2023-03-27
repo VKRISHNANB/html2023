@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript DOM Learning</title>
+	
+	<style>
+		   .green{
+			background-color:green
+		   }
+			.yellow {
+				background-color: yellow;
+			}
+	</style>
+</head>
+
+<body>
+    <div id="div01" class='green'>Hello World!</div>
+    <h1>My Title</h1>
+    <p>The world is a beautiful place</p>
+    <ul>
+        <li class="green">list1</li>
+        <li>list2</li>
+        <li class="yellow">list3</li>
+        <li>list4</li>
+    </ul>
+    <p>
+		<img alt="dom model" 
+		src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg">
+	</p>
+	
+	<p> <input title="enter your name" type="text" id="txtName"  value="Movies"/> </p>
+    <script>
+		//selecting element By id
+		var mydiv=document.getElementById("div01");
+		mydiv.innerHTML= "Hello Feb 2022"  ;
+		//refresh the page and check the output
+		var v_name = document.getElementById("txtName");
+		console.log(v_name.value);
+		
+		//selecting element by tagname
+		//returns all li element
+		var listItems = document.getElementsByTagName('li'); 
+		//looping through the item and updating the text
+		for(var i=0;i<listItems.length;i++)
+		{
+			listItems[i].innerHTML = "item " + (i + 1);
+		}
+		listItems[2].innerHTML = "updated text" ;
+		var imglist = document.getElementsByTagName('img') ;
+		imglist[0].src = "../../images/download.png" ;
+    </script>
+</body>
+
+</html>

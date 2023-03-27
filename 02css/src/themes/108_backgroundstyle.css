@@ -1,0 +1,32 @@
+div{
+    width:500px;
+    height:500px;
+    border:5px solid red;
+    color: aquamarine;
+    background-image: url(img1.jpg);
+    margin:100px auto;
+}
+/* background size */
+#div1{
+    width:500px;
+    height:500px;
+    border:5px solid red;
+    color: aquamarine;
+    background-image: url(img1.jpg);
+    margin:100px auto;
+    background-size: 200px;
+}
+/* background no repeat */
+#div2{
+    width:500px;
+    height:500px;
+    border:5px solid red;
+    color: aquamarine;
+    background-image: url(img1.jpg);
+    margin:100px auto;
+    background-size: 200px;
+    background-repeat: no-repeat;
+    /* background-position: right 50px bottom 50px; */
+    background-position: center;
+    /* background-position: 10% 50%; */
+}

@@ -1,0 +1,2 @@
+
+document.querySelectorAll('p') - select all "paragraph" elements from the page

@@ -1,0 +1,28 @@
+/* text formating */
+div{
+    text-align: right;
+}
+
+p{
+    background-color:blue;
+    color:white;
+    font-size:25px;
+    text-align:center;
+}
+
+div p{
+    display:inline;
+    background-color:green;
+    color:white;
+    font-size:25px;
+<<<<<<< HEAD:02css/src/themes/106_formatterstyle.css
+    text-align:center;
+    
+=======
+>>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1:02css/src/106_formatterstyle.css
+}
+
+h1{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+}

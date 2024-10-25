@@ -1,0 +1,72 @@
+.navbar {
+    background-color: #091235;
+    padding: 0px;
+    min-height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.navbar-left {
+    margin-left: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.brand-nav-item {
+    margin-right: 20px;
+    color: #FCFCFC;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.nav-item {
+    color: #FCFCFC;
+    font-size: 14px;
+    font-weight: 600;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.navbar-left-items {
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+}
+
+.takinaImg {
+    margin-top: 5px;
+    max-height: 59px;
+}
+
+.navbar-right {
+    margin: 22px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    border: 2px solid white;
+    border-radius: 12px;
+    font-family: 'Inter';
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #F5DBDB;
+    text-align: center;
+    text-decoration: none;
+    margin-left: 20px;
+    padding: 12px;
+    
+}
+
+.sign-in {
+    border-color: #AD9B9B;
+}
+
+.try {
+    color: #FFFFFF;
+    background-color: #88A9C3;
+    border-color: #2463EB;
+}

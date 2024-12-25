@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Collapsible Cards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f3f4f6;
+            padding: 2rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #111827;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .card-header {
+            padding: 1rem;
+            background: #f9fafb;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s ease;
+        }
+
+        .card-header:hover {
+            background: #f3f4f6;
+        }
+
+        .card-title {
+            font-weight: 500;
+            color: #111827;
+        }
+
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+
+        .card-content-inner {
+            padding: 1rem;
+            color: #4b5563;
+        }
+
+        .card.active .card-content {
+            max-height: 200px;
+        }
+
+        .chevron {
+            width: 20px;
+            height: 20px;
+            transition: transform 0.3s ease;
+        }
+
+        .card.active .chevron {
+            transform: rotate(180deg);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Collapsible Cards</h1>
+        <div class="cards-grid" id="cardsContainer">
+        </div>
+    </div>
+
+    <script>
+        // Generate 25 cards
+        const cardsContainer = document.getElementById('cardsContainer');
+        
+        for (let i = 1; i <= 25; i++) {
+            const card = document.createElement('div');
+            card.className = 'card';
+            card.innerHTML = `
+                <div class="card-header">
+                    <h3 class="card-title">Card ${i}</h3>
+                    <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="6 9 12 15 18 9"></polyline>
+                    </svg>
+                </div>
+                <div class="card-content">
+                    <div class="card-content-inner">
+                        This is the content for card ${i}. Click the header to toggle this content. 
+                        You can customize this text for each card as needed.
+                    </div>
+                </div>
+            `;
+            cardsContainer.appendChild(card);
+        }
+
+        // Add click event listeners to all cards
+        document.querySelectorAll('.card-header').forEach(header => {
+            header.addEventListener('click', () => {
+                const card = header.parentElement;
+                const content = card.querySelector('.card-content');
+                
+                // Toggle active class
+                card.classList.toggle('active');
+                
+                // If card is active, set max-height to allow content to show
+                if (card.classList.contains('active')) {
+                    content.style.maxHeight = content.scrollHeight + "px";
+                } else {
+                    content.style.maxHeight = 0;
+                }
+            });
+        });
+    </script>
+</body>
+</html>

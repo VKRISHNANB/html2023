@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Responsive Table</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border-bottom: 1px solid blue;
+        }
+        th {
+            background-color: chocolate;
+        }
+/* 
+        @media screen and (max-width: 600px) {
+            table {
+                border: 0;
+            }
+
+            table th,
+            table td {
+                display: block;
+                width: 100%;
+                box-sizing: border-box;
+            }
+
+            table th {
+                background-color: inherit;
+                position: absolute;
+                top: -9999px;
+                left: -9999px;
+            }
+
+            table td {
+                border-bottom: 1px solid #ddd;
+                position: relative;
+                padding-left: 50%;
+                text-align: right;
+            }
+
+            table td:before {
+                content: attr(data-label);
+                position: absolute;
+                left: 10px;
+                width: calc(50% - 10px);
+                padding-right: 10px;
+                white-space: nowrap;
+                text-align: left;
+                font-weight: bold;
+            }
+        } 
+*/
+    </style>
+</head>
+
+<body>
+    <table>
+        <thead>
+            <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td data-label="Header 1">Row 1, Cell 1</td>
+                <td data-label="Header 2">Row 1, Cell 2</td>
+                <td data-label="Header 3">Row 1, Cell 3</td>
+            </tr>
+            <tr>
+                <td data-label="Header 1">Row 2, Cell 1</td>
+                <td data-label="Header 2">Row 2, Cell 2</td>
+                <td data-label="Header 3">Row 2, Cell 3</td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+
+</html>

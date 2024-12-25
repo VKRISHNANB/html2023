@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Globe</title>
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    .hero {
+      width: 100%;
+      height: 100vh;
+      background: linear-gradient(45deg, #1a1a1a, #2a2a2a);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    canvas {
+      max-width: 100%;
+    }
+
+    .content {
+      position: absolute;
+      text-align: center;
+      color: white;
+      font-family: system-ui, -apple-system, sans-serif;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    }
+
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    }
+  </style>
+</head>
+<body>
+  <div class="hero">
+    <div class="content">
+      <h1>Welcome to Our World</h1>
+      <p>Exploring global connections through innovation</p>
+    </div>
+    <canvas id="globeCanvas"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById('globeCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Set canvas size
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    resizeCanvas();
+    window.addEventListener('resize', resizeCanvas);
+
+    // Globe parameters
+    const radius = Math.min(canvas.width, canvas.height) * 0.2;
+    let rotation = 0;
+    
+    function drawGlobe() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      // Move to center of screen
+      ctx.save();
+      ctx.translate(canvas.width / 2, canvas.height / 2);
+      
+      // Draw latitude lines
+      for(let lat = -90; lat <= 90; lat += 15) {
+        const r = radius * Math.cos(lat * Math.PI / 180);
+        const y = radius * Math.sin(lat * Math.PI / 180);
+        
+        ctx.beginPath();
+        for(let lon = 0; lon <= 360; lon += 5) {
+          const x = r * Math.cos((lon + rotation) * Math.PI / 180);
+          const z = r * Math.sin((lon + rotation) * Math.PI / 180);
+          
+          if(lon === 0) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.stroke();
+      }
+      
+      // Draw longitude lines
+      for(let lon = 0; lon < 360; lon += 15) {
+        ctx.beginPath();
+        for(let lat = -90; lat <= 90; lat += 5) {
+          const r = radius * Math.cos(lat * Math.PI / 180);
+          const x = r * Math.cos((lon + rotation) * Math.PI / 180);
+          const y = radius * Math.sin(lat * Math.PI / 180);
+          const z = r * Math.sin((lon + rotation) * Math.PI / 180);
+          
+          if(lat === -90) {
+            ctx.moveTo(x, y);
+          } else {
+            ctx.lineTo(x, y);
+          }
+        }
+        ctx.strokeStyle = 'rgba(255, 255, 255, 0.2)';
+        ctx.stroke();
+      }
+      
+      ctx.restore();
+      
+      // Rotate the globe
+      rotation += 0.5;
+      if(rotation >= 360) rotation = 0;
+      
+      requestAnimationFrame(drawGlobe);
+    }
+
+    drawGlobe();
+  </script>
+</body>
+</html>

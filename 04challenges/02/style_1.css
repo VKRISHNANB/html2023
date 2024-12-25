@@ -1,0 +1,25 @@
+.box{
+    text-align:center;
+}
+.align{
+    line-height:2.8;
+    text-align:center;
+}    
+.body{
+    border:2px inset black;
+    border-bo
+    width:400Px;
+    margin:280px auto;
+    background-color:rgba(0,0,0,.5);
+    letter-spacing:0px;
+    padding:30px 40px;
+    color:white;
+    }
+.cap{
+    width:88%;
+    font-size:1em;
+}
+.suri{
+      word-spacing:10px;
+}
+

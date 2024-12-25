@@ -1,0 +1,3 @@
+https://developer.chrome.com/blog/inside-browser-part1/
+
+https://webplatform.github.io/docs/concepts/Internet_and_Web/how_browsers_work/

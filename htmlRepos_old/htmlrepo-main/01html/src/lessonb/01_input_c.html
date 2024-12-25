@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input Types</title>
+	
+	<style>
+			div {
+				margin:15px;
+			}
+	</style>
+</head>
+
+<body>
+	<header> <h1> Input Types </h1>
+	</header>
+	
+	<div> 
+	
+		<form> 
+		<div>
+			<label> Years of Experience</label>
+			<input title="status"  id="year" type="number" min=1 max=40 step=1 maxlength="3" />
+		</div>
+		<div>
+			<label> Range</label>
+			<input   title="range" id="range" type="range" step=10/>
+		</div>
+		<div>
+			<label> Skills</label>
+			<input id="search" type="search" placeholder = "Search your skill" />	
+		</div>
+		<div>
+			<label> telephone</label>
+			<input type="tel" name="telid" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{3}" placeholder="123-456-678" />
+		</div>
+	</form>
+	</div>
+</body>
+
+
+
+</html>

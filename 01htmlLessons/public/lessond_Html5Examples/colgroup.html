@@ -1,0 +1,94 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title of the document</title>
+	<style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0px;
+    }
+    .container {
+        height: 100%;
+        background: #f0e68c;
+    }
+	#inputDiv
+	{
+		background-color: Grey; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+	}
+	#outputDiv
+	{
+		background-color:Orange; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+	}
+	table, th, td {
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="inputDiv">
+		<code>
+<table>
+  <colgroup>
+    <col span="2" style="background-color:red">
+    <col style="background-color:yellow">
+  </colgroup>
+  <tr>
+    <th>ISBN</th>
+    <th>Title</th>
+    <th>Price</th>
+  </tr>
+  <tr>
+    <td>3476896</td>
+    <td>My first HTML</td>
+    <td>$53</td>
+  </tr>
+  <tr>
+    <td>5869207</td>
+    <td>My first CSS</td>
+    <td>$49</td>
+  </tr>
+</table>
+		</code>
+	</div>
+
+	<div id="outputDiv">
+		<div>
+			<table>
+			  <colgroup>
+				<col span="2" style="background-color:red">
+				<col style="background-color:yellow">
+			  </colgroup>
+			  <tr>
+				<th>ISBN</th>
+				<th>Title</th>
+				<th>Price</th>
+			  </tr>
+			  <tr>
+				<td>3476896</td>
+				<td>My first HTML</td>
+				<td>$53</td>
+			  </tr>
+			  <tr>
+				<td>5869207</td>
+				<td>My first CSS</td>
+				<td>$49</td>
+			  </tr>
+			</table>
+		</div>
+	</div>
+	<div style="clear: both;">
+		<a href="index.html">Home</a>
+	</div>
+</body>
+</html>

@@ -15,28 +15,35 @@
 	<div>
 		<form method="post">
 			<div>
-				<label> Message</label>
-				<input title="enter a message" id="msg" />
-				<button type="submit" class="btn">Create</button>
+				<label for="msg"> Message</label>
+				<input placeholder="enter a message" id="msg" />
+				<button type="submit" >Create</button>
 			</div>
+			<hr/>
 			<div>
-				Base64 encoded text :
-				<label id="msg1"></label>
+				Base64 encoded text : <span id="encodedtxt">No Text HERE</span>
 			</div>
 		</form>
 	</div>
 
 	<script>
-		document.querySelector('form').addEventListener( 'submit', event => 
+		var frm=document.querySelector('form');
+		frm.addEventListener( 'submit', event => 
 			{
 				event.preventDefault();
+				// console.log('Hi...');
+
+				// #region a 
+				// Get a handle to the input element with id="msg"
 				const input = document.querySelector('#msg');
-				const encrypted = btoa(input.value);
-				const node_label = document.querySelector('#msg1');
-				node_label.innerHTML = encrypted;				
+			 // Encrypt the value of the input using in-build javascript function btoa()
+				const encrypted_value = btoa(input.value);
+				// Get a handle to the span element with id="encodedtxt"
+				const node_label = document.querySelector('#encodedtxt');
+				// Replace text in the span with the encrypted text
+				node_label.innerHTML = encrypted_value;		
+				//  #endregion 		
 			} ) ;
 	</script>
 </body>
-
-
-</html>
+</html> 

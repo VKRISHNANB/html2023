@@ -1,0 +1,10 @@
+1. https://developer.mozilla.org/en-US/docs/Web/Guide/HTML/HTML5/Introduction_to_HTML5
+
+2. https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML
+
+
+3. https://cs50.Chennai.edu/x/2022/notes/8/#html
+
+https://www.lipsum.com/feed/html
+
+Viewport meta tag: https://developer.mozilla.org/en-US/docs/Web/HTML/Viewport_meta_tag

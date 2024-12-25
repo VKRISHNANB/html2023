@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 
 <!-- Demonstrates inheritance -->
-
+        <!-- Entity references-->
 <html lang="en">
 
 <head>
@@ -17,13 +17,31 @@
     Modify the text-align value to right in the body and see the effect
     <code>style="text-align: right;"</code>
     -->
+    <!-- 
+        https://developer.mozilla.org/en-US/docs/Web/CSS/text-align
+
+        /* Keyword values */
+        text-align: start; The same as left if direction is left-to-right and right if direction is right-to-left.
+        text-align: end; The same as right if direction is left-to-right and left if direction is right-to-left.
+        text-align: left; The inline contents are aligned to the left edge of the line box.
+        text-align: right; The inline contents are aligned to the right edge of the line box.
+        text-align: center; The inline contents are centered within the line box.
+        text-align: justify; The inline contents are justified. Text should be spaced to line up its left and right edges to the left and right edges of the line box, except for the last line.
+        text-align: justify-all; Same as justify, but also forces the last line to be justified.
+        text-align: match-parent; Similar to inherit, but the values start and end are calculated according to the parent's direction and are replaced by the appropriate left or right value.
+
+        /* Character-based alignment in a table column */
+        text-align: ".";
+        text-align: "." center;
+    -->
 <body style="text-align: center;">
     <header style="font-size: large;">
-        Chain Sys
+       DirectionsOnIT
     </header>
     <main style="font-size: medium;">
         Welcome to my home page!
     </main>
+        <!-- Entity references-->
     <p>
         100 &lt; 300        
     </p>
@@ -34,9 +52,9 @@
         Jhon &amp;  &quot;Tom&quot;
     </p>
     <footer style="font-size: small;">
-        Copyright &#169; Chain Sys &#8377;
+        Copyright &#169; DirectionsOnIT &#8377;
     </footer>
-    <!-- Entity references-->
+
 </body>
 
 </html>

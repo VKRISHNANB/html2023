@@ -1,0 +1,12 @@
+
+html, body {
+  overflow-x: hidden;
+}
+body {
+    min-height: 100vh;
+    background-color: green;
+    background-image: url("images/pattern-background-desktop.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    overflow-y: scroll;
+  }

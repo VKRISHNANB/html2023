@@ -1,0 +1,48 @@
+.image{
+    float:right;
+    width:250px;
+    height:380px;
+    }
+.body{
+    width:650px;
+    background-color:gray;
+    height:550px;
+    margin:150px 400px auto;
+    
+}
+.line{
+    line-height:40px;
+    
+}
+.email{
+    line-height:40px;
+    font-size:13px;
+    font-weight:bold;
+}
+::placeholder { 
+color: red;
+}
+.button{
+    size:2px;
+    background-color:solid black;
+    color:white;
+    padding:10px 30px;
+    
+}
+.size{
+    
+    padding:10px 35px;
+    margin-bottom:3%;
+	background-color: pink;
+    color: red;    
+}
+.color{
+    border:20px solid white;
+    background-color:white;
+}
+.key{
+    padding:70px;
+    color:red;
+    font-size:10px;
+    
+}

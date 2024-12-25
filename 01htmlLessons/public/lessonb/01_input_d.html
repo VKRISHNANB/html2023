@@ -21,22 +21,26 @@
 	<div>
 		<form>
 			<div>
-				<label> Hobbies</label>
-				<input title="hobby" type="checkbox" checked=true name="items" value="Reading">Reading</input>
-				<input title="option1" type="checkbox" name="items" value="Music">Music</input>
+				<label for="checkbox"> Hobbies</label>
+				<input title="hobby" type="checkbox" checked=true name="items"      
+							value="Reading">Reading</input>
+				<input title="option1" type="checkbox" name="items" value="Music">Music
+			     </input>
 				<input title="option2" type="checkbox" name="items" value="Dance">Dance</input>
 			</div>
+
 			<div>
-				<label> hidden content</label>
+				<label for="hid"> hidden content</label>
 				<input id="hid" type="hidden" value="Ice creams and cakes"/>
 			</div>
 			<div>
-				<label> Url</label>
-				<input title="enter url" id="url" type="url" />
+				<label for="url"> Url</label>
+				<input title="enter url" id="url" name="url" type="url" />
 			</div>
+
 			<div>
-				<label> Comments</label>
-				<textarea title="Enter your comment here" id="comment" cols="50" rows="5" /> comments</textarea>
+				<label for="comments"> Comments</label>
+				<textarea title="Enter your comment here" id="comment" cols="50" rows="5" > comments</textarea>
 			</div>
 		</form>
 	</div>

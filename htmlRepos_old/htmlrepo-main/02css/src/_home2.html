@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+
+<!-- Demonstrates type selectors -->
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- 
+         Even here we find reduntent style <code> text-align: center;</code>
+    -->
+    <style>
+       
+        header {
+            font-size: large;
+            text-align: center;
+        }
+
+        main {
+            font-size: medium;
+            text-align: center;
+        }
+
+        footer {
+            font-size: small;
+            text-align: center;
+        }
+    </style>
+    <title>css</title>
+</head>
+
+<body>
+    <!-- 
+        Separate CSS from HTML by including styles in the <head> tag
+        <rule>no-inline-styles: 
+            CSS inline styles should not be used,
+            move styles to an external CSS file
+        </rule>
+        Separation of concern. Web Page designers, and web page builders can now work independently
+    -->
+    <header>
+        DirectionsonIT
+    </header>
+    <main>
+        Welcome to my home page!
+    </main>
+    <footer>
+        Copyright &#169; DirectionsonIT
+    </footer>
+</body>
+
+</html>

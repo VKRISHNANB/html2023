@@ -6,7 +6,7 @@ h2{
 }
 
 h3{
-    background-color:blue;
+    background-color:cyan;
     color:white;
 }
 
@@ -14,20 +14,25 @@ h1,h3{
     color:white;
 }
 
-ui li
+ul
 {
     color:red;
 }
 
 /* selecting parent child */
-ui li
+ul li
 {
-    color:blue;
+    color:blueviolet;
 }
 li{
     color:green;
 }
-
+li a{ color: orange; } /* ul li selects all li that are anywhere within (descending as deep as you like) */
+li>a{ color: red; } /* ul>li selects all li that are a direct child of ul whereas  */
+ol li
+{
+    color:chartreuse;
+}
 /* selecting class element */
 .item{
  color:pink;

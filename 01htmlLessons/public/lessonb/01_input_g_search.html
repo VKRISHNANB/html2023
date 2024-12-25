@@ -1,46 +1,86 @@
 <html lang="en">
-	
-	<head>
-		<meta charset="UTF-8">
-		<meta http-equiv="X-UA-Compatible" content="IE=edge">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<title>Input Types</title>
-		
-		<style>
-			div {
-			margin:15px;
-			}
-			
-			input[type="search"]{
-			font-size:15px;
-			color:black;
-			
-			}
-			
-			input[type="search"]::placeholder{
-			
-			color:white;
-			padding-left:2px;
-			
-			}
-		</style>
-	</head>
-	
-	<body>
-		<header> <h1> Input Search </h1>
-		</header>
-		<div> 
-			<form> 
-				<div>
-					<label> Skills</label>
-					<input id="search" type="search" placeholder = "Search..." />
-					<input id="btnsubmit" type="submit" value="search" />
-					
-					<!-- type some text in the search box and click on search button
-						all the values added to the search box and 
-					the values can be saved automatically and reused to allow auto-completion -->
-				</div>
-			</form>
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Input Types</title>
+
+	<style>
+		div {
+			margin: 15px;
+		}
+
+		input[type="search"] {
+			font-size: 15px;
+			color: black;
+		}
+
+		input[type="search"]::placeholder {
+			color: white;
+			padding-left: 2px;
+		}
+	</style>
+
+
+</head>
+
+<body>
+	<header>
+		<h1> Input Search </h1>
+	</header>
+	<form>
+		<div>
+			<label for="search"> Skills</label>
+			<input id="search" type="search" name="q" placeholder="Search..." />
 		</div>
-	</body>
+		<div>
+			Why the input element type search does not display the list of items entered in it
+			The &lt;input type="search" &gt; element doesn't display a list of items by itself. To show a list of
+			suggestions as the user types, you need to use the &lt; datalist &gt; element in combination with the list
+			attribute of the &lt; input &gt; element
+		</div>
+		<div>
+			<label for="search">Search:</label>
+			<input type="search" id="search" name="search" list="suggestions">
+			<datalist id="suggestions">
+				<option value="Apple">
+				<option value="Banana">
+				<option value="Cherry">
+				<option value="Date">
+			</datalist>
+		</div>
+		<div>
+			To dynamically add new words that the user types into the search box and make them available as suggestions,
+			you will need to use JavaScript to update the &lt;datalist&gt; element.
+		</div>
+		<div>
+			<label for="p">Search:</label>
+			<input type="search" id="p" name="p" list="data">
+			<datalist id="data">
+				<option value="Chennai">
+				<option value="Salem">
+				<option value="Trichy">
+				<option value="Madurai">
+			</datalist>
+		</div>
+		<input id="btnsubmit" type="submit" value="search" />
+	</form>
+	<script>
+		const searchInput = document.getElementById('p');
+		const datalist = document.getElementById('data');
+		const data = Array.from(datalist.options);
+		searchInput.addEventListener('change', function () {
+			const value = searchInput.value.trim();
+			if (value && !data.some(data => data.value.toLowerCase() === value.toLowerCase())) {
+				const newOption = document.createElement('option');
+				newOption.value = value;
+				datalist.appendChild(newOption);
+				data.push(newOption);
+			}
+		}
+		);
+	</script>
+</body>
+
 </html>

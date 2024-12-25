@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>JavaScript DOM Learning</title>
+</head>
+
+<body>
+	<script>
+		//array access
+		const arr = [1, 2, 3, 4, 5, 6];
+		console.log(arr);
+		// JSON to STRING
+		const strArr = JSON.stringify(arr);
+		console.log(strArr);
+		// key and value array
+		const myObj = {
+			'firstname': 'Venkat',
+			'lastname': 'krishnan'
+		};
+		const strjson = JSON.stringify(myObj);
+		console.log(strjson);
+		//json parse; String to JSON
+		const arr1 = JSON.parse(strjson);
+		console.log(arr1);
+
+		var javastudentlist = {
+			"sudentlist": [
+				{ "name": "Ajith", "age": "22" }, { "name": "Vijay", "age": "22" },
+				{ "name": "Tom", "age": "22" }
+			]
+		};
+		console.log(javastudentlist);
+
+		
+	</script>
+</body>
+
+</html>

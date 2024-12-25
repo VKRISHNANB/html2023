@@ -1,19 +1,31 @@
 <!DOCTYPE html>
 <!-- Demonstrates pseudoselector -->
 <html lang="en">
-<<<<<<< HEAD
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <style>
-=======
-    <head>
         <!-- 
             Pseudo Elements / Classes 
         -->
         <style>
-            /* p:nth-child(5n+1)
+            /*  
+            first-child, and last-child will be overridden
+            n+1 will be overridden by odd even*/
+            /*
+              p:first-child
+            {
+                color:red;
+                font-size: larger;
+            }
+
+            p:last-child
+            {
+                color:blue;
+                font-size: larger;
+            } 
+            p:nth-child(5n+1) 
             {
                 color:cyan;
                 font-size: larger;
@@ -29,25 +41,25 @@
                 font-size: larger;
             } */
           /* --Try p:nth-child(1n+1) here-- */
->>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1
+
             p:first-child
             {
                 color:red;
                 font-size: larger;
             }
-<<<<<<< HEAD
-=======
+
             p:last-child
             {
                 color:blue;
                 font-size: larger;
             }
-            /* p:nth-child(1n+1)
+            /* 
+            p:nth-child(1n+1)
             {
                 color:cyan;
                 font-size: larger;
             } */
->>>>>>> 72bb8a0229c15206687e6b68c76a368ae5c2d9e1
+
         </style>
         <title>paragraphs</title>
     </head>

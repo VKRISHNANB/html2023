@@ -3,32 +3,41 @@
 
 <head>
 	<meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Input Types</title>
-	
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Input Types</title>
+
 	<style>
-			div {
-				margin:15px;
-			}
+		div {
+			margin: 15px;
+		}
 	</style>
 </head>
 
 <body>
-	<header> <h1> Input Types </h1>
+	<header>
+		<h1> Input Types</h1>
 	</header>
-	<div> 
-		<form> 
+	<ol>
+		<li>date</li>
+		<li>datetime-local</li>
+		<li>time</li>
+		<li>week</li>
+	</ol>
+	<form>
 		<div>
-			<label> DOB</label>
-			<div>
-				<input title="enter your date of birth" id="date" type="date" /> </div>
-			<div><input title="enter date and time" id="datetime-local" type="datetime-local" /> </div> 
-			<div><input title="enter time here" id="time" type="time" /> </div>
-			<div><input title="enter the week of the year" id="week" type="week" /> </div> 
-			<div><input title="status" id="color" type="color" /> </div>
+			<label for="date"> DOB</label>
+			<input title="enter your date of birth" id="date" type="date" />
 		</div>
-		</form>
-	</div>
+		<div>
+			<input title="enter date and time" id="datetime-local" type="datetime-local" />
+		</div>
+		<div><input title="enter time here" id="time" type="time" /> </div>
+		<div>
+			<input title="enter the week of the year" id="week" type="week" />
+		</div>
+		<div><input title="status" id="color" type="color" /> </div>
+	</form>
 </body>
+
 </html>

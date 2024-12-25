@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive 3D Solar System</title>
+  <style>
+    body { margin: 0; }
+    canvas { display: block; }
+  </style>
+</head>
+<body>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/three@0.128/examples/js/controls/OrbitControls.js"></script>
+  <script>
+    let scene, camera, renderer, controls;
+    const planets = [];
+
+    function init() {
+      scene = new THREE.Scene();
+      camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+      renderer = new THREE.WebGLRenderer({ antialias: true });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+
+      // Milky Way background
+      const loader = new THREE.TextureLoader();
+      loader.load('https://threejsfundamentals.org/threejs/resources/images/starfield.jpg', function(texture) {
+        scene.background = texture;
+      });
+
+      // Create a sphere (Sun)
+      const sunGeometry = new THREE.SphereGeometry(1, 32, 32);
+      const sunMaterial = new THREE.MeshBasicMaterial({ color: 0xffff00 });
+      const sun = new THREE.Mesh(sunGeometry, sunMaterial);
+      scene.add(sun);
+
+      // Create planets
+      const planetData = [
+        { size: 0.1, color: 0xff0000, distance: 1.5 },
+        { size: 0.2, color: 0x00ff00, distance: 2 },
+        { size: 0.3, color: 0x0000ff, distance: 3 }
+      ];
+
+      planetData.forEach(data => {
+        const geometry = new THREE.SphereGeometry(data.size, 32, 32);
+        const material = new THREE.MeshBasicMaterial({ color: data.color });
+        const planet = new THREE.Mesh(geometry, material);
+        planet.position.x = data.distance;
+        planets.push(planet);
+        scene.add(planet);
+      });
+
+      // Create stars
+      const starGeometry = new THREE.BufferGeometry();
+      const starMaterial = new THREE.PointsMaterial({ color: 0xffffff });
+      const starVertices = [];
+      for (let i = 0; i < 10000; i++) {
+        starVertices.push((Math.random() - 0.5) * 2000);
+        starVertices.push((Math.random() - 0.5) * 2000);
+        starVertices.push((Math.random() - 0.5) * 2000);
+      }
+      starGeometry.setAttribute('position', new THREE.Float32BufferAttribute(starVertices, 3));
+      const stars = new THREE.Points(starGeometry, starMaterial);
+      scene.add(stars);
+
+      // Camera position
+      camera.position.z = 5;
+
+      // Orbit controls
+      controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.dampingFactor = 0.25;
+      controls.enableZoom = true;
+
+      animate();
+    }
+
+    function animate() {
+      requestAnimationFrame(animate);
+      planets.forEach(planet => {
+        planet.rotation.y += 0.01;
+        planet.position.y = Math.sin(Date.now() * 0.001) * 0.5;
+      });
+      controls.update();
+      renderer.render(scene, camera);
+    }
+
+    window.addEventListener('resize', () => {
+      camera.aspect = window.innerWidth / window.innerHeight;
+      camera.updateProjectionMatrix();
+      renderer.setSize(window.innerWidth, window.innerHeight);
+    });
+
+    init();
+  </script>
+</body>
+</html>

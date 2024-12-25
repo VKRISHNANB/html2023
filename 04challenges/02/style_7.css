@@ -1,0 +1,93 @@
+.body{
+    background-color:black;
+}
+.border{
+    width:320px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border:3px white;
+    height:680px;
+    margin:150px 400px auto;
+    background-color:white;
+}    
+.image{
+    width:300px;
+    height:300px;
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+}
+.text_align{
+    padding:5px 20px;
+}
+.linespace{
+    margin-bottom:4%;
+}
+.email{
+    line-height:30px;
+    font-size:12px;
+    font-weight:bold;
+}
+.box{
+    text-align:left;
+    margin-bottom:7%;
+    padding:10px 50px;
+    border-radius:4px;
+}
+.button{
+    background-color:black;
+    color:white;
+    padding:10px 39px;
+    border-radius:4px;
+    margin-bottom:9%;
+}
+,11:39 AM,
+History is on
+
+Thread
+Follow
+Kuppan Surya
+,
+11:39 AM
+,
+.body{
+    background-color:black;
+}
+.border{
+    width:320px;
+    overflow-y:scroll;
+    overflow-x:hidden;
+    border:3px white;
+    height:680px;
+    margin:150px 400px auto;
+    background-color:white;
+}    
+.image{
+    width:300px;
+    height:300px;
+    border-bottom-left-radius:30px;
+    border-bottom-right-radius:30px;
+}
+.text_align{
+    padding:5px 20px;
+}
+.linespace{
+    margin-bottom:4%;
+}
+.email{
+    line-height:30px;
+    font-size:12px;
+    font-weight:bold;
+}
+.box{
+    text-align:left;
+    margin-bottom:7%;
+    padding:10px 50px;
+    border-radius:4px;
+}
+.button{
+    background-color:black;
+    color:white;
+    padding:10px 39px;
+    border-radius:4px;
+    margin-bottom:9%;
+}

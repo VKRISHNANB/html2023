@@ -1,48 +1,60 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JavaScript DOM Learning</title>
-	<style>
-		   .green{
-			background-color:green
-		   }
-			.yellow {
-				background-color: yellow;
-			}
-	</style>
+    <style>
+        .green {
+            background-color: green
+        }
+
+        .yellow {
+            background-color: yellow;
+        }
+    </style>
+    <script>
+        // will add as innerText of the body - will be the first child of the body
+        document.write('12345'); 
+    </script>
 </head>
 
 <body>
-    <div id="div01" class='green'>Hello World!</div>
+    <div id="div01" >Hello World!</div>
     <h1>My Title</h1>
     <ul>
-        <li class="green">list1</li>
+        <li>list1</li>
         <li>list2</li>
-        <li class="yellow">list3</li>
+        <li>list3</li>
         <li>list4</li>
     </ul>
+    <!-- #region a -->
     <p>
-        <img alt="dom model" 
-        src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg">
+        <img alt="dom model" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/DOM-model.svg">
     </p>
-	<p> 
-        <input class="green" title="name" type="text" id="txtName" placeholder="enter your name" /> 
+    <p>
+        <input title="name" type="text" id="txtName" placeholder="enter your name" />
     </p>
+
     <script>
-		//“The method console.dir() displays an interactive list of the properties of the specified JavaScript object
-		// The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
+        //“The method console.dir() displays an interactive list of the properties of the specified javaScript object
+        // The output is presented as a hierarchical listing with disclosure triangles that let you see the contents of child objects.
         console.dir(document);
         console.log(document.URL);
-		console.dir(document.children[0]); // html
-		console.dir(document.children[0].children[1]); // body
-		console.dir(document.children[0].children[1].childNodes); // see all the node lists
+        const rootelement = document.children[0];// html
+        console.dir(rootelement);
+        const secondChildElement = rootelement.children[1];// body
+        console.dir(secondChildElement);
+        const elementsOfBody = document.children[0].children[1].childNodes
+        console.dir(elementsOfBody); // see all the node lists
         //windows object model
-		console.dir(window);  // lists all window objects 
-		document.write("Welcome") //it writes the content in the document
-    </script>
+        console.dir(window);  // lists all window objects 
+        document.write("Welcome") //it writes the content in the document inside the body - will be the last child of the body
+    </script> 
+   
+    <!-- #endregion -->
 </body>
 
 </html>

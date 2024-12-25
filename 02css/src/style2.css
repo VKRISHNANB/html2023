@@ -1,27 +1,28 @@
-/* Descentant by space  /*/
+/* Descendant at any level by space  */
 section p
 {
     color:red;
 }
-
+/* First Descendant not nested */
 section > p
 {
     color:orange;
 }
 
-/* Adjacent siling + select all immediate element */
-/*Selects immediately following sibling of specified element */
+/* Adjacent sibling + select all immediate element */
+/*Selects immediately following sibling(p) of specified element(h1) */
 h1 + p
 {
-    background-color: antiquewhite;
+    background-color: black;
+    color: white;
 }
 
-/* selects all siblings placed after specified element */
+/* selects all  paragraph siblings placed after the specified element(h1) */
 h1 ~ p
 {
-    background-color: antiquewhite;
+    background-color: cyan;
 }
-
+/* Will not work h1 does not have a descendant */
 h1 > p
 {
     background-color: antiquewhite;

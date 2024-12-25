@@ -1,0 +1,36 @@
+.c {
+text-align: center;
+border:2px inset skyblue;
+width:500px;
+height:500px;
+margin:150px 450px auto;
+
+}
+
+.sandy 
+{
+color:white;
+background-color:skyblue;
+ line-height:2.8;
+}
+.surya 
+{
+color:blue;
+line-height:2.8;
+font-size:30px;
+font-style:normal;
+
+}
+
+.selvam
+{
+font-size:100px; 
+color:skyblue;
+}
+
+.yuva 
+{
+ color: red;
+ line-height:2;
+ font-size:20px;
+}

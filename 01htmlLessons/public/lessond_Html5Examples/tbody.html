@@ -1,0 +1,123 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Title of the document</title>
+	<style type="text/css">
+    html, body {
+        height: 100%;
+        margin: 0px;
+    }
+    .container {
+        height: 100%;
+        background: #f0e68c;
+    }
+	#inputDiv
+	{
+		background-color: Grey; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+		overflow: auto;
+	}
+	#outputDiv
+	{
+		background-color:Orange; 
+		color: white;
+		width: 50%; 
+		height: 90%;
+		float: left;
+	}
+	thead {color:green;}
+	tbody {color:blue;}
+	tfoot {color:red;}
+
+	table, th, td {
+		border: 1px solid black;
+	}
+</style>
+</head>
+<body>
+	
+	<div id="inputDiv">
+		<code>
+<style>
+thead {color:green;}
+tbody {color:blue;}
+tfoot {color:red;}
+
+table, th, td {
+    border: 1px solid black;
+}
+</style>
+</head>
+
+<body>
+
+<table>
+  <thead>
+    <tr>
+      <th>Month</th>
+      <th>Savings</th>
+    </tr>
+  </thead>
+  <tfoot>
+    <tr>
+      <td>Sum</td>
+      <td>$180</td>
+    </tr>
+  </tfoot>
+  <tbody>
+    <tr>
+      <td>January</td>
+      <td>$100</td>
+    </tr>
+    <tr>
+      <td>February</td>
+      <td>$80</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><b>Tip:</b> The thead, tbody, and tfoot elements will not affect the layout of the table by default. 
+However, you can use CSS to style these elements.</p>
+		</code>
+	</div>
+
+	<div id="outputDiv">
+		<div>
+			<table>
+			  <thead>
+				<tr>
+				  <th>Month</th>
+				  <th>Savings</th>
+				</tr>
+			  </thead>
+			  <tfoot>
+				<tr>
+				  <td>Sum</td>
+				  <td>$180</td>
+				</tr>
+			  </tfoot>
+			  <tbody>
+				<tr>
+				  <td>January</td>
+				  <td>$100</td>
+				</tr>
+				<tr>
+				  <td>February</td>
+				  <td>$80</td>
+				</tr>
+			  </tbody>
+			</table>
+
+			<p><b>Tip:</b> The thead, tbody, and tfoot elements will not affect the layout of the table by default. However, you can use CSS to style these elements.</p>
+		</div>
+	</div>
+	<div style="clear: both;">
+		<a href="index.html">Home</a>
+	</div>
+</body>
+</html>

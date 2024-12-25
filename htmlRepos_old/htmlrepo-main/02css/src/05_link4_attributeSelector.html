@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<!-- Demonstrates attribute selectors -->
+
+<html lang="en">
+    <head>
+        <style>
+            a
+            {
+                color: #ff0000;
+                text-decoration: none;
+            }
+            a:hover
+            {
+                text-decoration: underline;
+            }
+            a[href="https://chennai.nic.in"]
+            {
+                color: #ff006a;
+            }
+            a[href="https://madurai.nic.in"]
+            {
+                color: green;
+            }
+            input[name="txtname"]{
+                color:#ff0000;
+            }
+        </style>
+        <title>link</title>
+    </head>
+    <body>
+        Visit 
+        <p> <a href="https://chennai.nic.in" >Chennai</a> </p>
+         or 
+        <p> <a href="https://madurai.nic.in" >Madurai</a></p>
+         or
+        <p> <a href="https://madurai.nic.in/" >Matuthavani</a></p>
+    </body>
+</html>

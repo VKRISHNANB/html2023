@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Data Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1a4a4a 0%, #2a6f6f 100%);
+            color: #ffffff;
+            min-height: 100vh;
+        }
+
+        nav {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-right: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .encrypted-box {
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .encrypted-text {
+            font-family: monospace;
+            font-size: 0.8rem;
+            opacity: 0.3;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            z-index: 1;
+            overflow: hidden;
+            line-height: 1.4;
+        }
+
+        .message {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 2rem 0;
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#use-cases">USE CASES</a></li>
+            <li><a href="#developers">DEVELOPERS</a></li>
+            <li><a href="#pricing">PRICING</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="encrypted-box">
+            <div class="encrypted-text">
+                MTIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK3FZ0Q
+                JH0BPZQHS0CQXLSREUZD0UZMEBB0QPZQHS0CQXL
+                NKRPTMIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK
+                UZDUZMEB8H0BPZQHS0CQXLSREUZD0UZMEBB0QPZ
+                MTIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK3FZ0Q
+            </div>
+            <h1 class="message">We designed our platform to operate on encrypted data.</h1>
+        </div>
+        <p class="subtitle">
+            We understand that data privacy is essential. That's why we've built our platform 
+            from the ground up with security and trust as core principles.
+        </p>
+    </div>
+
+    <footer>
+        <p>CENTRALIZE COMMUNICATIONS. SECURE YOUR DATA. MAINTAIN PRIVACY.</p>
+    </footer>
+</body>
+</html>

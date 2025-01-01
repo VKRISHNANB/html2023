@@ -4,8 +4,89 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>testimony</title>
-    <link rel="stylesheet" href="./styles/testimony.css">
 
+<style>
+      body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f4f6;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      /* justify-content: center; */
+      align-items: center;
+      min-height: 100vh;
+      /* added by venkat */
+    line-height: 1.5;
+    place-content: center;
+
+    }
+
+    .container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      max-width: 1200px;
+      margin: 20px;
+    }
+
+    .card {
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    small {
+        color: #9b9fa7;
+
+    }
+    .card img {
+      border-radius: 50%;
+      width: 50px;
+      height: 50px;
+      object-fit: cover;
+      float: left;
+      margin-right: 15px;
+      border: 2px solid #a774f2;
+    }
+
+    .card h3 {
+      margin: 0;
+      font-size: 1rem;
+      padding-top: 10px;
+      font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      line-height: 1.5;
+    }
+
+    .highlight{
+        font-weight: 600;
+    }
+
+    .card.purple {
+      background-color: #733fc8;
+      background-image: url('../images/bg-pattern-quotation.svg');
+      background-repeat: no-repeat;
+      background-position: 80% 0%;
+      color: white;
+    }
+
+    .card.dark {
+      background-color: #49556b;
+      color: white;
+    }
+    .card.blue{
+        background-color: #18202d;
+        color: white;
+
+    }
+
+</style>
 </head>
 <body>
     <div class="container">

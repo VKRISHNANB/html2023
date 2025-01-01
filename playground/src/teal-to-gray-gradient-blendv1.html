@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secure Data Platform</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: radial-gradient(circle at top right, 
+                rgba(128, 128, 128, 0.2) 0%,
+                rgba(0, 128, 128, 0) 60%),
+                linear-gradient(135deg, 
+                rgb(0, 77, 77) 0%,
+                rgb(32, 110, 110) 50%,
+                rgba(128, 157, 157, 0.8) 100%);
+            color: #ffffff;
+            min-height: 100vh;
+            background-attachment: fixed;
+        }
+
+        nav {
+            padding: 1rem 2rem;
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .nav-links li {
+            display: inline-block;
+            margin-right: 2rem;
+        }
+
+        .nav-links a {
+            color: #ffffff;
+            text-decoration: none;
+            opacity: 0.8;
+            transition: opacity 0.3s;
+            font-size: 0.9rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            opacity: 1;
+        }
+
+        .main-content {
+            max-width: 800px;
+            margin: 4rem auto;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .encrypted-box {
+            background: linear-gradient(135deg,
+                rgba(255, 255, 255, 0.05) 0%,
+                rgba(255, 255, 255, 0.1) 100%);
+            border-radius: 12px;
+            padding: 3rem;
+            margin: 2rem 0;
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(10px);
+        }
+
+        .encrypted-text {
+            font-family: monospace;
+            font-size: 0.8rem;
+            opacity: 0.15;
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            padding: 1rem;
+            z-index: 1;
+            overflow: hidden;
+            line-height: 1.4;
+            color: #a0f0f0;
+        }
+
+        .message {
+            position: relative;
+            z-index: 2;
+            font-size: 2rem;
+            font-weight: 300;
+            margin: 2rem 0;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        .subtitle {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            margin-top: 2rem;
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.1);
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <ul class="nav-links">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#use-cases">USE CASES</a></li>
+            <li><a href="#developers">DEVELOPERS</a></li>
+            <li><a href="#pricing">PRICING</a></li>
+        </ul>
+    </nav>
+
+    <div class="main-content">
+        <div class="encrypted-box">
+            <div class="encrypted-text">
+                MTIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK3FZ0Q
+                JH0BPZQHS0CQXLSREUZD0UZMEBB0QPZQHS0CQXL
+                NKRPTMIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK
+                UZDUZMEB8H0BPZQHS0CQXLSREUZD0UZMEBB0QPZ
+                MTIG4KT0Q8RGRGR3FZ0QRHKWQJLZXDAF0WK3FZ0Q
+            </div>
+            <h1 class="message">We designed our models to operate on encrypted data.</h1>
+        </div>
+        <p class="subtitle">
+            We know data privacy is paramount. That's why we've built our AI platform 
+            from the ground up with trust in mind.
+        </p>
+    </div>
+
+    <footer>
+        <p>CENTRALIZE COMMS, AI CHAT ASSISTANTS, GAIN INSIGHTS, KEEP DATA PRIVATE.</p>
+    </footer>
+</body>
+</html>

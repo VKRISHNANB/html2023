@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .loader-container {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .title {
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            width: 200px;
+            height: 6px;
+            background: #444;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .progress-fill {
+            width: 0%;
+            height: 100%;
+            background: #4CAF50;
+            animation: progressFill 3s infinite;
+        }
+
+        @keyframes progressFill {
+            0% { width: 0%; }
+            100% { width: 100%; }
+        }
+
+        /* Circular Progress */
+        .circular-progress {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: conic-gradient(#4CAF50 0%, transparent 0%);
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .circular-progress::before {
+            content: attr(data-progress) '%';
+            color: white;
+            font-size: 1.5rem;
+        }
+
+        /* Typing Dots */
+        .typing-loader {
+            display: flex;
+            gap: 8px;
+        }
+
+        .typing-dot {
+            width: 12px;
+            height: 12px;
+            background: #4CAF50;
+            border-radius: 50%;
+            animation: typingDot 1.4s infinite;
+        }
+
+        .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+        .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+
+        @keyframes typingDot {
+            0%, 100% { transform: scale(0.5); opacity: 0.5; }
+            50% { transform: scale(1); opacity: 1; }
+        }
+
+        /* Skeleton Loading */
+        .skeleton-card {
+            width: 200px;
+            padding: 1rem;
+            background: #2a2a2a;
+            border-radius: 8px;
+        }
+
+        .skeleton-line {
+            height: 15px;
+            background: linear-gradient(90deg, #333 25%, #444 50%, #333 75%);
+            background-size: 200% 100%;
+            animation: shimmer 1.5s infinite;
+            border-radius: 4px;
+            margin-bottom: 10px;
+        }
+
+        .skeleton-line:last-child {
+            width: 60%;
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -200% 0; }
+            100% { background-position: 200% 0; }
+        }
+
+        /* Spinner */
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 5px solid #444;
+            border-top-color: #4CAF50;
+            border-radius: 50%;
+            animation: spin 1s infinite linear;
+        }
+
+        @keyframes spin {
+            100% { transform: rotate(360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <h2 class="title">Linear Progress Bar</h2>
+        <div class="progress-bar">
+            <div class="progress-fill"></div>
+        </div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Circular Progress</h2>
+        <div class="circular-progress" data-progress="0"></div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Typing Indicator</h2>
+        <div class="typing-loader">
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+            <div class="typing-dot"></div>
+        </div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Skeleton Loading</h2>
+        <div class="skeleton-card">
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+            <div class="skeleton-line"></div>
+        </div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Spinner</h2>
+        <div class="spinner"></div>
+    </div>
+
+    <script>
+        // Circular progress animation
+        const circularProgress = document.querySelector('.circular-progress');
+        let progress = 0;
+
+        function updateProgress() {
+            if (progress < 100) {
+                progress++;
+                circularProgress.style.background = `conic-gradient(#4CAF50 ${progress * 3.6}deg, transparent ${progress * 3.6}deg)`;
+                circularProgress.setAttribute('data-progress', progress);
+                setTimeout(updateProgress, 50);
+            }
+        }
+
+        updateProgress();
+    </script>
+</body>
+</html>

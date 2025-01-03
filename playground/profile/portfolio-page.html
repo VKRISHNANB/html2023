@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Krishnan | Co-founder</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            max-width: 1200px;
+            padding: 2rem;
+            position: relative;
+        }
+
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+            align-items: center;
+        }
+
+        .text-content {
+            padding-right: 2rem;
+        }
+
+        h1 {
+            font-size: 4rem;
+            font-weight: 300;
+            margin: 0;
+            line-height: 1.1;
+            color: #333;
+        }
+
+        .title {
+            font-size: 1.2rem;
+            color: #666;
+            margin-top: 1rem;
+        }
+
+        .image-container {
+            position: relative;
+            width: 100%;
+            height: 0;
+            padding-bottom: 100%;
+            border-radius: 50%;
+            overflow: hidden;
+        }
+
+        .image-container img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: grayscale(100%);
+        }
+
+        .logo {
+            position: absolute;
+            bottom: 2rem;
+            left: 2rem;
+            width: 80px;
+            height: 80px;
+        }
+
+        .logo svg {
+            width: 100%;
+            height: 100%;
+        }
+
+        @media (max-width: 768px) {
+            .content {
+                grid-template-columns: 1fr;
+            }
+            
+            .text-content {
+                padding-right: 0;
+                text-align: center;
+            }
+
+            h1 {
+                font-size: 3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="content">
+            <div class="text-content">
+                <h1>Venkata<br>Krishnan</h1>
+                <div class="title">Co-founder<br>Flair AI</div>
+            </div>
+            <div class="image-container">
+                <img src="/api/placeholder/800/800" alt="Person with cat">
+            </div>
+        </div>
+        <div class="logo">
+            <svg viewBox="0 0 100 100">
+                <circle cx="50" cy="50" r="45" fill="none" stroke="#333" stroke-width="2"/>
+                <text x="50" y="50" text-anchor="middle" dominant-baseline="middle" font-size="12">SCROLL DOWN</text>
+            </svg>
+        </div>
+    </div>
+</body>
+</html>

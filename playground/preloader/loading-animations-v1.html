@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Loading Animations</title>
+    <style>
+        body {
+            margin: 0;
+            min-height: 100vh;
+            background: #1a1a1a;
+            font-family: Arial, sans-serif;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem;
+        }
+
+        .loader-container {
+            background: #2a2a2a;
+            border-radius: 10px;
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 300px;
+        }
+
+        .title {
+            color: white;
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        /* Rotating Globe */
+        .globe-spinner {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: 
+                radial-gradient(circle at 65% 15%, white 1px, transparent 3px),
+                radial-gradient(circle at 35% 65%, white 1px, transparent 3px),
+                radial-gradient(circle at 85% 55%, white 1px, transparent 3px),
+                radial-gradient(circle at 15% 35%, white 1px, transparent 3px),
+                linear-gradient(#4CAF50 0 0);
+            box-shadow: inset 0 0 20px rgba(0,0,0,0.4);
+            animation: globe 2s linear infinite;
+            position: relative;
+        }
+
+        .globe-spinner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent 45%, rgba(255,255,255,0.2) 50%, transparent 55%);
+            border-radius: 50%;
+            animation: shine 2s linear infinite;
+        }
+
+        @keyframes globe {
+            100% { transform: rotate(360deg); }
+        }
+
+        @keyframes shine {
+            100% { transform: rotate(-360deg); }
+        }
+
+        /* DNA Helix */
+        .dna-loader {
+            height: 100px;
+            width: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transform-style: preserve-3d;
+            animation: rotate 4s linear infinite;
+        }
+
+        .dna-pair {
+            width: 100%;
+            height: 4px;
+            background: #4CAF50;
+            border-radius: 2px;
+            animation: squeeze 4s ease-in-out infinite;
+        }
+
+        .dna-pair:nth-child(even) {
+            transform: rotateY(180deg);
+        }
+
+        @keyframes rotate {
+            100% { transform: rotateY(360deg); }
+        }
+
+        @keyframes squeeze {
+            50% { transform: scaleX(0.5); }
+        }
+
+        /* Pulse Ring */
+        .pulse-ring {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            background: #4CAF50;
+            position: relative;
+        }
+
+        .pulse-ring::before,
+        .pulse-ring::after {
+            content: '';
+            position: absolute;
+            border: 2px solid #4CAF50;
+            border-radius: 50%;
+            top: -2px;
+            left: -2px;
+            right: -2px;
+            bottom: -2px;
+            animation: pulse 2s linear infinite;
+        }
+
+        .pulse-ring::after {
+            animation-delay: 1s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); opacity: 1; }
+            100% { transform: scale(2); opacity: 0; }
+        }
+
+        /* Cube Spinner */
+        .cube-spinner {
+            width: 60px;
+            height: 60px;
+            transform-style: preserve-3d;
+            animation: cube-spin 4s linear infinite;
+        }
+
+        .cube-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            border: 2px solid #4CAF50;
+            background: rgba(76, 175, 80, 0.1);
+        }
+
+        .face-front { transform: translateZ(30px); }
+        .face-back { transform: translateZ(-30px) rotateY(180deg); }
+        .face-right { transform: translateX(30px) rotateY(90deg); }
+        .face-left { transform: translateX(-30px) rotateY(-90deg); }
+        .face-top { transform: translateY(-30px) rotateX(90deg); }
+        .face-bottom { transform: translateY(30px) rotateX(-90deg); }
+
+        @keyframes cube-spin {
+            100% { transform: rotateX(360deg) rotateY(360deg); }
+        }
+
+        /* Infinity Loop */
+        .infinity-loader {
+            width: 120px;
+            height: 60px;
+            position: relative;
+        }
+
+        .infinity-track {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            border: 4px solid transparent;
+            border-top-color: #4CAF50;
+            border-radius: 50%;
+            animation: infinity 2s linear infinite;
+        }
+
+        .infinity-track:nth-child(1) { left: 0; }
+        .infinity-track:nth-child(2) { right: 0; }
+
+        @keyframes infinity {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Original loaders styles remain here */
+        /* ... (keep all the previous styles) ... */
+
+    </style>
+</head>
+<body>
+    <div class="loader-container">
+        <h2 class="title">Rotating Globe</h2>
+        <div class="globe-spinner"></div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">DNA Helix</h2>
+        <div class="dna-loader">
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+            <div class="dna-pair"></div>
+        </div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Pulse Ring</h2>
+        <div class="pulse-ring"></div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">3D Cube</h2>
+        <div class="cube-spinner">
+            <div class="cube-face face-front"></div>
+            <div class="cube-face face-back"></div>
+            <div class="cube-face face-right"></div>
+            <div class="cube-face face-left"></div>
+            <div class="cube-face face-top"></div>
+            <div class="cube-face face-bottom"></div>
+        </div>
+    </div>
+
+    <div class="loader-container">
+        <h2 class="title">Infinity Loop</h2>
+        <div class="infinity-loader">
+            <div class="infinity-track"></div>
+            <div class="infinity-track"></div>
+        </div>
+    </div>
+
+    <!-- Original loaders remain here -->
+    <!-- ... (keep all the previous loaders) ... -->
+
+</body>
+</html>

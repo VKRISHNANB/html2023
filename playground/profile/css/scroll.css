@@ -1,0 +1,119 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #ffffff;
+    font-family: "Helvetica Neue", Arial, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container {
+    max-width: 1200px;
+    padding: 2rem;
+    position: relative;
+    background-color: #ffffff;
+}
+
+/*
+ .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    align-items: center;
+}
+
+.text-content {
+    padding-right: 2rem;
+}
+
+h1 {
+    font-size: 4rem;
+    font-weight: 300;
+    margin: 0;
+    line-height: 1.1;
+    color: #333;
+}
+
+.title {
+    font-size: 1.2rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+.image-container {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.image-container img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: grayscale(100%);
+} 
+    */
+
+.scroll-indicator {
+    bottom: 2rem;
+    left: 2rem;
+    width: 150px;
+    height: 80px;
+}
+
+.rotating-circle {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    animation: rotate 20s linear infinite;
+}
+
+.scroll-text {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    animation: rotate 20s linear infinite;
+}
+
+.star {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: rotateCounter 12s linear infinite;
+    width: 20px;
+    height: 20px;
+
+
+}
+.star line {
+    stroke: #000000;  /* Changed to pure black */
+    stroke-width: 1.5;
+}
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes rotateCounter {
+    from {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    to {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+.scroll-text path {
+    fill: white; /* #333; */
+}

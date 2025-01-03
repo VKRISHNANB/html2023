@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Dancing Baby Preloader</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: black;
+            overflow: hidden;
+            flex-direction: column;
+        }
+
+        .baby-container {
+            width: 200px;
+            height: 200px;
+            position: relative;
+            margin-bottom: 30px;
+        }
+
+        .baby {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            transform-origin: center bottom;
+            animation: dance 2s infinite;
+        }
+
+        /* Baby parts */
+        .head {
+            position: absolute;
+            width: 60px;
+            height: 70px;
+            background: #ffd5d5;
+            border-radius: 50% 50% 45% 45%;
+            top: 20px;
+            left: 70px;
+            animation: headBob 2s infinite;
+        }
+
+        .body {
+            position: absolute;
+            width: 50px;
+            height: 70px;
+            background: #ffd5d5;
+            border-radius: 20px 20px 10px 10px;
+            top: 85px;
+            left: 75px;
+            animation: bodyMove 2s infinite;
+        }
+
+        .arm-left, .arm-right {
+            position: absolute;
+            width: 20px;
+            height: 60px;
+            background: #ffd5d5;
+            border-radius: 10px;
+            top: 90px;
+        }
+
+        .arm-left {
+            left: 45px;
+            transform-origin: top center;
+            animation: leftArmDance 2s infinite;
+        }
+
+        .arm-right {
+            right: 45px;
+            transform-origin: top center;
+            animation: rightArmDance 2s infinite;
+        }
+
+        .leg-left, .leg-right {
+            position: absolute;
+            width: 20px;
+            height: 50px;
+            background: #ffd5d5;
+            border-radius: 10px;
+            top: 150px;
+        }
+
+        .leg-left {
+            left: 65px;
+            transform-origin: top center;
+            animation: leftLegDance 2s infinite;
+        }
+
+        .leg-right {
+            right: 65px;
+            transform-origin: top center;
+            animation: rightLegDance 2s infinite;
+        }
+
+        .counter {
+            color: white;
+            font-family: Arial, sans-serif;
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        @keyframes dance {
+            0%, 100% { transform: rotate(-5deg); }
+            50% { transform: rotate(5deg); }
+        }
+
+        @keyframes headBob {
+            0%, 100% { transform: translateY(0) rotate(-5deg); }
+            50% { transform: translateY(-5px) rotate(5deg); }
+        }
+
+        @keyframes bodyMove {
+            0%, 100% { transform: rotate(-8deg); }
+            50% { transform: rotate(8deg); }
+        }
+
+        @keyframes leftArmDance {
+            0%, 100% { transform: rotate(-40deg); }
+            50% { transform: rotate(20deg); }
+        }
+
+        @keyframes rightArmDance {
+            0%, 100% { transform: rotate(40deg); }
+            50% { transform: rotate(-20deg); }
+        }
+
+        @keyframes leftLegDance {
+            0%, 100% { transform: rotate(-20deg); }
+            50% { transform: rotate(10deg); }
+        }
+
+        @keyframes rightLegDance {
+            0%, 100% { transform: rotate(20deg); }
+            50% { transform: rotate(-10deg); }
+        }
+
+        .main-content {
+            display: none;
+            opacity: 0;
+            transition: opacity 1s ease;
+        }
+
+        .diaper {
+            position: absolute;
+            width: 40px;
+            height: 30px;
+            background: white;
+            border-radius: 10px;
+            top: 140px;
+            left: 80px;
+        }
+    </style>
+</head>
+<body>
+    <div class="baby-container">
+    <!-- #region baby -->
+        <div class="baby">
+            <div class="head"></div>
+            <div class="body"></div>
+            <div class="arm-left"></div>
+            <div class="arm-right"></div>
+            <div class="leg-left"></div>
+            <div class="leg-right"></div>
+            <div class="diaper"></div>
+        </div>
+    <!-- #endregion baby -->
+
+
+    </div>
+    <div class="counter" id="counter">0%</div>
+
+    <script>
+        const counter = document.getElementById('counter');
+        let count = 0;
+
+        function updateCounter() {
+            if (count < 100) {
+                count += Math.floor(Math.random() * 5) + 1;
+                count = Math.min(count, 100);
+                counter.textContent = count + '%';
+                
+                if (count === 100) {
+                    setTimeout(() => {
+                        document.body.style.backgroundColor = 'white';
+                        document.querySelector('.baby-container').style.display = 'none';
+                        counter.style.display = 'none';
+                    }, 1000);
+                } else {
+                    setTimeout(updateCounter, Math.random() * 100 + 50);
+                }
+            }
+        }
+
+        setTimeout(updateCounter, 500);
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preloader</title>
+    <link rel="icon" type="image/jpeg" sizes="32x32" href="img/favicon.jpeg"/>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: black;
+            font-family: Arial, sans-serif;
+        }
+        .circle {
+            width: 400px;
+            height: 400px;
+            border: 2px solid #fff;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .number {
+            color: #FDF9CF; /* #fff; */
+            /* font-size: 48px; */
+            font-size: 216px;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="circle">
+        <div class="number" id="counter">0</div>
+    </div>
+
+    <script>
+        const counter = document.getElementById('counter');
+        let count = 0;
+
+        function updateCounter() {
+            if (count < 100) {
+                // Random increment between 1 and 5
+                count += Math.floor(Math.random() * 5) + 1;
+                // Make sure we don't exceed 100
+                count = Math.min(count, 100);
+                counter.textContent = count;
+                
+                // Random delay between 50ms and 150ms
+                const delay = Math.random() * 100 + 50;
+                setTimeout(updateCounter, delay);
+            }
+        }
+
+        // Start the animation after a short delay
+        setTimeout(updateCounter, 500);
+    </script>
+</body>
+</html>

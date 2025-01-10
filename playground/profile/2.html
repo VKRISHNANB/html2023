@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Venkata Krishnan</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #e0e0e0;
+        }
+        .container{
+            position: relative;
+            width: 80%;
+            height: 80%;
+            max-width: 1200px;
+            max-height: 1200px;
+            display: flex; 
+            justify-content: center;
+            align-content: center;
+        }
+        .img-container {
+            position: relative;
+            top: 20%;
+            width: 50%; /* 50% reduction in size */
+            height: 50%;
+            max-width: 600px;
+            /* max-height: 300px; */
+            display: flex; 
+            justify-content: center;
+            align-items: center;
+        }
+        .image {
+            width: 100%;
+            height: auto;
+            border-radius: 50%;
+               }
+        .text {
+            position: absolute;
+            color: black;
+            font-family: Arial, sans-serif;
+            /* font-weight: bold; */
+        }
+        .top-left {
+            top: 10%;
+            left: 15%;
+            font-size: 5vw;
+            z-index: 1;
+text-align: left;
+                }
+        .bottom-right {
+            bottom: 22%;
+            right: 10%;
+            font-size: 5vw;
+            z-index: 1;
+            text-align: right;
+        }
+        .character { display: inline-block; color: black; }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div id="topText" class="text top-left"></div> 
+    <div id="bottomText" class="text bottom-right"></div>
+        <div class="img-container">
+        <img id="mainImage" src="img/bvkontreakbw.jpg" alt="Venkata Krishnan" class="image">
+    </div>
+</div>
+    <script>
+        // function isOverlapping(element1, element2) {
+        //     const rect1 = element1.getBoundingClientRect();
+        //     const rect2 = element2.getBoundingClientRect();
+
+        //     return !(rect1.right < rect2.left || 
+        //              rect1.left > rect2.right || 
+        //              rect1.bottom < rect2.top || 
+        //              rect1.top > rect2.bottom);
+        // }
+
+        // function updateTextColor() {
+        //     const image = document.getElementById('mainImage');
+        //     const topText = document.getElementById('topText');
+        //     const bottomText = document.getElementById('bottomText');
+            
+        //     if (isOverlapping(topText, image)) {
+        //         topText.style.color = 'yellow';
+        //     } else {
+        //         topText.style.color = 'black';
+        //     }
+
+        //     if (isOverlapping(bottomText, image)) {
+        //         bottomText.style.color = 'yellow';
+        //     } else {
+        //         bottomText.style.color = 'black';
+        //     }
+        // }
+
+        // window.onload = updateTextColor;
+        // window.onresize = updateTextColor;
+    </script>
+    <script> 
+        const topTextString = "Venkata"; 
+        const bottomTextString = "Krishnan"; 
+        function createSpans(text, parent) { 
+            for (let char of text) { 
+                const span = document.createElement('span'); 
+                span.className = 'character'; 
+                span.textContent = char; 
+                parent.appendChild(span); } 
+            } 
+        function isOverlapping(element1, element2) { 
+            const rect1 = element1.getBoundingClientRect(); 
+            const rect2 = element2.getBoundingClientRect(); 
+            return !(rect1.right < rect2.left+90 || rect1.left > rect2.right-50 || rect1.bottom < rect2.top || rect1.top > rect2.bottom); 
+        } 
+        function updateTextColor() { 
+            const image = document.getElementById('mainImage'); 
+            const topText = document.getElementById('topText'); 
+            const bottomText = document.getElementById('bottomText'); 
+            const topTextChars = topText.getElementsByClassName('character'); 
+            const bottomTextChars = bottomText.getElementsByClassName('character'); 
+            const overlapTextColor=`khaki`;
+            const defaultTextColor=`black`;
+            for (let char of topTextChars) {
+                 if (isOverlapping(char, image)) { 
+                    char.style.color = overlapTextColor; 
+                } 
+                else 
+                { 
+                    char.style.color = defaultTextColor; 
+                }
+             } 
+             for (let char of bottomTextChars) { 
+                if (isOverlapping(char, image)) {
+                     char.style.color = overlapTextColor; 
+                }else { 
+                        char.style.color =defaultTextColor; 
+                    } 
+                } 
+            } 
+        window.onload = function() {
+             createSpans(topTextString, document.getElementById('topText')); 
+             createSpans(bottomTextString, document.getElementById('bottomText')); 
+             updateTextColor(); 
+            } 
+        window.onresize = updateTextColor; 
+    </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+/* Page Container */
+.instructor-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #F5F5F5; /* Light gray background */
+}
+
+/* Circular Image */
+.instructor-image {
+    width: 150px; /* Adjust size as needed */
+    height: 150px; /* Adjust size as needed */
+    border-radius: 50%; /* Makes the image circular */
+    border: 2px solid #0b232d; /* Dark green border */
+    object-fit: cover; /* Ensure the image fits within the circle */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow */
+    margin-top: 20px;
+  justify-items: center;
+}
+
+/* Text Box */
+.instructor-box {
+    background-color: #0b232d; /* White background */
+    width: 50%; /* Adjust width as needed */
+    max-width: 1024px; /* Ensure it doesn’t get too wide */
+    padding: 20px;
+    border-radius: 15px; /* Rounded edges */
+    box-shadow: 15px 5px 8px  rgb(30, 30, 30);
+    text-align: left;
+    color: #efbd06; /* Dark gray text */
+    line-height: 1.6;
+  margin-top: 10px;
+  margin-left: 30px;
+  margin-bottom: 10px;
+  align-items: center;
+}
+
+/* Title */
+.instructor-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Description Text */
+.instructor-text {
+    font-size: 16px;
+}

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <defs>
+    <radialGradient id="orb-gradient" cx="70%" cy="15%" r="50%" fx="50%" fy="60%">
+      <stop offset="0%" style="stop-color:#8B4513;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#DAA520;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#0b232d;stop-opacity:1" />
+    </radialGradient>
+    <filter id="orb-glow" x="-50%" y="-50%" width="200%" height="250%">
+      <feGaussianBlur in="SourceGraphic" stdDeviation="20" result="blur" />
+      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="glow" />
+      <feBlend in="SourceGraphic" in2="glow" mode="normal" />
+    </filter>
+  </defs>
+
+  <rect x="0" y="0" width="1000" height="550" fill="#0b232d" />
+
+  <!-- Semi-circle 1 -->
+  <g transform="translate(-35, 80) rotate(-10)">
+  <path d="M 530,325 m -150,0 a 150,150 0 1,1 300,0" fill="url(#orb-gradient)" filter="url(#orb-glow)" />
+  </g>
+
+  <!-- Transformed semi-circles -->
+  <g transform="translate(550, 325) rotate(170)">
+    <path d="M 0,0 m -200,0 a 200,200 0 1,1 400,0" fill="url(#orb-gradient)" opacity="1" filter="url(#orb-glow)" />
+    <path d="M 0,0 m -150,0 a 150,150 0 1,1 300,0" fill="url(#orb-gradient)" opacity="0.5" filter="url(#orb-glow)" />
+  </g>
+  <path d="M 530,325 c -100,-150 -100,150 0,0 c 100,-150 100,150 0,0" fill="url(#orb-gradient)" opacity="0.5" filter="url(#orb-glow)" />
+</svg>

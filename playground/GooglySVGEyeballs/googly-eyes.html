@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background: #f0f0f0;
+    }
+    
+    .eye-container {
+      display: flex;
+      gap: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="eye-container">
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <!-- Eye Socket -->
+      <circle cx="50" cy="50" r="45" fill="white" stroke="black" stroke-width="5"/>
+      <!-- Pupil -->
+      <circle id="pupil1" cx="50" cy="50" r="20" fill="black"/>
+    </svg>
+    
+    <svg width="100" height="100" viewBox="0 0 100 100">
+      <!-- Eye Socket -->
+      <circle cx="50" cy="50" r="45" fill="white" stroke="black" stroke-width="5"/>
+      <!-- Pupil -->
+      <circle id="pupil2" cx="50" cy="50" r="20" fill="black"/>
+    </svg>
+  </div>
+
+  <script>
+    const pupils = [
+      document.getElementById('pupil1'),
+      document.getElementById('pupil2')
+    ];
+    
+    // Max distance the pupil can move from center
+    const maxDistance = 15;
+    
+    document.addEventListener('mousemove', (e) => {
+      const mouseX = e.clientX;
+      const mouseY = e.clientY;
+      
+      pupils.forEach((pupil) => {
+        // Get the eye's position relative to the viewport
+        const eyeRect = pupil.ownerSVGElement.getBoundingClientRect();
+        const eyeCenterX = eyeRect.left + eyeRect.width / 2;
+        const eyeCenterY = eyeRect.top + eyeRect.height / 2;
+        
+        // Calculate angle between mouse and eye center
+        const angle = Math.atan2(mouseY - eyeCenterY, mouseX - eyeCenterX);
+        
+        // Calculate distance between mouse and eye center
+        const distance = Math.min(
+          maxDistance,
+          Math.hypot(mouseX - eyeCenterX, mouseY - eyeCenterY) / 5
+        );
+        
+        // Calculate new pupil position
+        const pupilX = 50 + Math.cos(angle) * distance;
+        const pupilY = 50 + Math.sin(angle) * distance;
+        
+        // Update pupil position
+        pupil.setAttribute('cx', pupilX);
+        pupil.setAttribute('cy', pupilY);
+      });
+    });
+  </script>
+</body>
+</html>

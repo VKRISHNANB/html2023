@@ -1,0 +1,69 @@
+.container {
+    display: flex;
+    padding-left: 10px;
+    /* justify-content: left; */
+}
+
+.shadow-shape {
+    width: 10px;
+    height: 10px;
+    background-color: #700c97;
+    position: relative;
+}
+
+.shadow-shape-left {
+    border-radius: 100px 0px 0 0;
+}
+
+.shadow-shape-right {
+    border-radius: 0px 100px 0 0;
+}
+
+.semicircle-shape {
+    width: 200px;
+    height: 100px;
+    background-color: #1d0129;
+    border-radius: 0px 0 100px 100px;
+    position: relative;
+    transform-origin: top center;
+    animation: fold-over 2s ease-in-out infinite alternate;
+}
+.semicircle-shape-green {
+    width: 200px;
+    height: 100px;
+    background-color: #0b232d;
+    border-radius: 0px 0 100px 100px;
+    position: relative;
+    transform-origin: top center;
+    animation: fold-over 2s ease-in-out infinite alternate;
+}
+.shadow-shape-green {
+    width: 10px;
+    height: 10px;
+    background-color: #014764;
+    position: relative;
+}
+.semicircle-shape-yellow {
+    width: 200px;
+    height: 100px;
+    background-color: #b68f05;
+    border-radius: 0px 0 100px 100px;
+    position: relative;
+    transform-origin: top center;
+    animation: fold-over 2s ease-in-out infinite alternate;
+}
+.shadow-shape-yellow {
+    width: 10px;
+    height: 10px;
+    background-color: #efbd06;
+    position: relative;
+}
+@keyframes fold-over {
+    0% {
+        transform: rotateX(0deg);
+    }
+
+    100% {
+        transform: rotateX(-30deg);
+    }
+}

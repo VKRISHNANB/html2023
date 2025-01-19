@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <!-- Subtle gradient for depth -->
+    <linearGradient id="leafGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#9ACD32;stop-opacity:0.7"/>
+      <stop offset="100%" style="stop-color:#6B8E23;stop-opacity:0.9"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Background -->
+  <rect width="500" height="500" fill="#F0E68C"/>
+
+  <!-- Stylized palm leaf shapes -->
+  <path d="M50 100 Q150 50, 250 100 Q350 150, 450 100 
+           Q350 200, 250 250 Q150 200, 50 250 Z" 
+        fill="url(#leafGradient)" 
+        opacity="0.6"/>
+
+  <path d="M100 200 Q200 150, 300 200 Q400 250, 500 200 
+           Q400 300, 300 350 Q200 300, 100 350 Z" 
+        fill="url(#leafGradient)" 
+        opacity="0.4"/>
+
+  <path d="M25 300 Q125 250, 225 300 Q325 350, 425 300 
+           Q325 400, 225 450 Q125 400, 25 450 Z" 
+        fill="url(#leafGradient)" 
+        opacity="0.3"/>
+</svg>
